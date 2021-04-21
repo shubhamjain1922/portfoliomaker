@@ -15,6 +15,8 @@
 	<br><br>
 	Last name: <input type="text" class="lname">
 	<br><br>
+	Job Title: <input type="text" class="jobtitle">
+	<br><br>
 	email: <input type="text" class="email">
 	<br><br>
 	Phone number: <input type="text" class="phone">
@@ -75,9 +77,10 @@ $(".submitdoneskill").on("click",function(){
 			det[4]=$(".address").val();
 			det[5]=skill;
 			det[6]=$(".aboutp").val();
+			det[7]=$(".jobtitle").val();
 
 			localStorage.setItem("myJson", JSON.stringify(det));
-			window.location.href = "designs/1/index.html";
+			window.location.href = "designs/2/index.html";
 		})
 	</script>
 </body>
