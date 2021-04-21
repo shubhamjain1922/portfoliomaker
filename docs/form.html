@@ -80,7 +80,9 @@ $(".submitdoneskill").on("click",function(){
 			det[7]=$(".jobtitle").val();
 
 			localStorage.setItem("myJson", JSON.stringify(det));
-			window.location.href = "designs/2/index.html";
+			var z=localStorage.getItem("designno"); //getting job data
+    var data=JSON.parse(z);
+			window.location.href = "designs/"+data+"/index.html";
 		})
 	</script>
 </body>
