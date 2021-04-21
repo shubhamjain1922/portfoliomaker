@@ -10,7 +10,8 @@
 <div class="w3-row">
   <div class="w3-half w3-black w3-container w3-center" style="height:700px">
     <div class="w3-padding-64">
-      <h1>My Logo</h1>
+      <h1 style="text-transform: uppercase;"><span class="fname"></span> <span class="lname"></span></h1>
+      <h4 class="jobtitle"></h4>
     </div>
     <div class="w3-padding-64">
       <a href="#" class="w3-button w3-black w3-block w3-hover-blue-grey w3-padding-16">Home</a>
@@ -22,10 +23,9 @@
   <div class="w3-half w3-blue-grey w3-container" style="height:700px">
     <div class="w3-padding-64 w3-center">
       <h1>About Me</h1>
-      <img src="/w3images/avatar3.png" class="w3-margin w3-circle" alt="Person" style="width:50%">
+      <img src="img1.jfif" class="w3-margin w3-circle" alt="Person" style="width:50%;height: 300px;">
       <div class="w3-left-align w3-padding-large">
-        <p>Lorem ipusm sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-        <p>Lorem ipusm sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <p class="aboutmep">Lorem ipusm sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
       </div>
     </div>
   </div>
@@ -35,32 +35,32 @@
 <div class="w3-row">
   <div class="w3-half w3-light-grey w3-center" style="min-height:800px" id="work">
     <div class="w3-padding-64">
-      <h2>My Work</h2>
+      <h2>Portfolio</h2>
       <p>Some of my latest projects.</p>
     </div>
     <div class="w3-row">
       <div class="w3-half">
-        <img src="/w3images/coffee.jpg" style="width:100%">
+        <img src="img1.jfif" style="width:100%;max-height: 150px;">
       </div>
       <div class="w3-half">
-        <img src="/w3images/workbench.jpg" style="width:100%">
+        <img src="img1.jpeg" style="width:100%;max-height: 150px;">
       </div>
     </div>
     <div class="w3-row w3-hide-small">
       <div class="w3-half">
-        <img src="/w3images/workbench.jpg" style="width:100%">
+        <img src="img1.jfif" style="width:100%;max-height: 150px;">
       </div>
       <div class="w3-half">
-        <img src="/w3images/coffee.jpg" style="width:100%">
+        <img src="img1.jpeg" style="width:100%;max-height: 150px;">
       </div>
     </div>
 
     <div class="w3-row w3-hide-small">
       <div class="w3-half">
-        <img src="/w3images/sound.jpg" style="width:100%">
+        <img src="img1.jfif" style="width:100%;max-height: 150px;">
       </div>
       <div class="w3-half">
-        <img src="/w3images/workbench.jpg" style="width:100%">
+        <img src="img1.jpeg" style="width:100%;max-height: 150px;">
       </div>
     </div><br>
     <p>Just call me awesome.</p>
@@ -120,9 +120,9 @@
     </div>
     <div class="w3-padding-64">
       <p>..for a cup of coffee, or whatever.</p>
-      <p>Chicago, US</p>
-      <p>+00 1515151515</p>
-      <p>test@test.com</p>
+      <p class="address">Chicago, US</p>
+      <p class="phone">+00 1515151515</p>
+      <p class="email">test@test.com</p>
     </div>
   </div>
   <div class="w3-half w3-teal w3-container" style="height:700px">
@@ -150,8 +150,24 @@
 
 <!-- Footer -->
 <footer class="w3-container w3-black w3-padding-16">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  <span class="fname"></span> <span class="lname"></span>
 </footer>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script>
+  var z=localStorage.getItem("myJson"); //getting job data
+    var data=JSON.parse(z);
+    var skillname =Object.keys(data[5]);
+    var skilllevel= Object.values(data[5]);
+
+$(".fname").html(data[0]);
+$(".lname").html(data[1]);
+$(".aboutmep").html(data[6]);
+$(".email").html(data[2]);
+$(".phone").html(data[3]);
+$(".address").html(data[4]);
+$(".jobtitle").html(data[7]);
+</script>
 
 </body>
 </html>
