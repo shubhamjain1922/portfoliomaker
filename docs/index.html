@@ -4,12 +4,20 @@
   <title></title>
 </head>
 <body>
+
+	<label for="design">Choose design:</label>
+              <select id="design" name="design">
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+
   <input type="submit" name="submit" class="submit">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script>
    
     $(".submit").on("click",function(){
-     
+    	var design_no = $("#design").val();
+    	localStorage.setItem("designno", JSON.stringify(design_no));
       window.location.href = "form.html";
     })
   </script>
