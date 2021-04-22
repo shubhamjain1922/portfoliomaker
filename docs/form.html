@@ -2,44 +2,92 @@
 <html>
 <head>
 	<title>Form</title>
+	<script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 	<style>
 		body {
-			background: #f0f0f2;
+			background: white;
+		}
+
+		.wrapper {
+			margin-top: 30px;
+		}
+
+		.heading {
+			color: #0ea277;
+			font-weight: 700;
+			/*font-size: 2em;*/
+			text-align: center;
+			margin-bottom: 40px;
+		}
+
+		.blogq {
+			background: rgba(240, 240, 242, 0.4);
+			width: 70%;
+			border-radius: 5px;
+			padding: 5px 10px;
+			cursor: pointer;
+			margin: auto;
+		}
+
+		.down {
+			float: right;
+		}
+
+		.bloga {
+			display: none;
+			padding: 10px;
+			cursor: default;
 		}
 	</style>
 </head>
 <body>
 
-	<h2>Portfolio Details form</h2>
-	First name: <input type="text" class="fname">
-	<br><br>
-	Last name: <input type="text" class="lname">
-	<br><br>
-	Job Title: <input type="text" class="jobtitle">
-	<br><br>
-	email: <input type="text" class="email">
-	<br><br>
-	Phone number: <input type="text" class="phone">
-	<br><br>
-	Address: <input type="text" class="address">
-	<br><br>
-	Number of skills: <input type="number" class="skillno"><input type="submit" value="Submit" class="submitskill">
-	<br><br>
-	<div class="skills">
+	<div class="wrapper">
+		<h1 class="heading">Portfolio Details form</h1>
+		<div class="blogq 1q">
+			<h2 class="q">Personal Infromation <i class="fas fa-chevron-down down"></i></h2>
+			<div class="bloga 1a">
+				
+			</div>
+		</div>
+		First name: <input type="text" class="fname" placeholder="First Name">
+		<br><br>
+		Last name: <input type="text" class="lname" placeholder="Last Name">
+		<br><br>
+		Job Title: <input type="text" class="jobtitle" placeholder="Job Title">
+		<br><br>
+		email: <input type="text" class="email" placeholder="Email ID">
+		<br><br>
+		Phone number: <input type="text" class="phone" placeholder ="Phone Number">
+		<br><br>
+		Address: <input type="text" class="address" placeholder="Address">
+		<br><br>
+		Number of skills: <input type="number" class="skillno"><input type="submit" value="Submit" class="submitskill">
+		<br><br>
+		<div class="skills">
+		</div>
+		<input type="submit" value="Done" class="submitdoneskill" style="display: none">
+		<br><br>
+
+		About me paragraph:<br> <textarea rows="3" cols="40" name="comment" class="aboutp"></textarea>
+		<br><br>
+
+		About me image/Profile pic: <input type="file"  accept="image/*" class="profilepic"  onchange="loadFile(event)">
+		<p><img id="output" width="200" style="display: none;" /></p>
+
+		<input type="submit" value="Submit" class="submit">
+
 	</div>
-	<input type="submit" value="Done" class="submitdoneskill" style="display: none">
-	<br><br>
-
-    About me paragraph:<br> <textarea rows="3" cols="40" name="comment" class="aboutp"></textarea>
-    <br><br>
-
-	About me image/Profile pic: <input type="file"  accept="image/*" class="profilepic"  onchange="loadFile(event)">
-	<p><img id="output" width="200" style="display: none;" /></p>
-
-	<input type="submit" value="Submit" class="submit">
 
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script>
+		$(".blogq").click(function(){
+			$(".bloga").slideUp();
+			var a= $(this).attr("class").split(" ")[1][0];
+			$("."+a+"a").slideDown();
+		})
+		$(".3a").slideDown();
+
 		var loadFile = function(event) {
 			var image = document.getElementById('output');
 			image.style.display = "block";
@@ -61,13 +109,13 @@
 		};
 
 
-$(".submitdoneskill").on("click",function(){
-		for(i=0;i<$(".skillno").val();i++,x++)
-		{
-			var x = $(".skillname"+i).val();
-			var level = $(".skilllevel"+i).val();
-			skill[x]=level;
-		}})
+		$(".submitdoneskill").on("click",function(){
+			for(i=0;i<$(".skillno").val();i++,x++)
+			{
+				var x = $(".skillname"+i).val();
+				var level = $(".skilllevel"+i).val();
+				skill[x]=level;
+			}})
 
 		$(".submit").on("click",function(){
 			det[0]=$(".fname").val();
@@ -81,7 +129,7 @@ $(".submitdoneskill").on("click",function(){
 
 			localStorage.setItem("myJson", JSON.stringify(det));
 			var z=localStorage.getItem("designno"); //getting job data
-    var data=JSON.parse(z);
+			var data=JSON.parse(z);
 			window.location.href = "designs/"+data+"/index.html";
 		})
 	</script>
