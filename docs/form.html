@@ -10,23 +10,25 @@
 
 		.wrapper {
 			margin-top: 30px;
+			width: 70%;
+			margin: auto;
 		}
 
 		.heading {
 			color: #0ea277;
 			font-weight: 700;
-			/*font-size: 2em;*/
 			text-align: center;
 			margin-bottom: 40px;
 		}
 
 		.blogq {
 			background: rgba(240, 240, 242, 0.4);
-			width: 70%;
+			
 			border-radius: 5px;
 			padding: 5px 10px;
 			cursor: pointer;
 			margin: auto;
+			margin-bottom: 30px;
 		}
 
 		.down {
@@ -37,6 +39,47 @@
 			display: none;
 			padding: 10px;
 			cursor: default;
+			
+		}
+		.q {
+			font-size: 1.5em;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+
+		.submit {
+			padding: 10px 20px;
+    border-radius: 50px;
+    background: #0ca27d;
+    color: white;
+    font-size: 1.3em;
+    display: inline-block;
+    margin-top: 40px;
+    cursor: pointer;
+    float: right;
+		}
+		.inputwrapper {
+			display: inline-block;
+			margin: 20px;
+			margin-right: 80px;
+			margin-left: 0;
+			font-size: 1em;
+			font-weight: 500;
+		}
+		input {
+			padding: 10px;
+			width: 15vw;
+		}
+
+		.submitskill {
+			margin-left: -50px;
+			display: inline-block;
+			background: rgba(240, 240, 242, 1);
+			cursor: pointer;
+			padding: 10px 50px;
+		}
+		.submitskill:hover {
+			background: #d9d9d9;
 		}
 	</style>
 </head>
@@ -45,48 +88,86 @@
 	<div class="wrapper">
 		<h1 class="heading">Portfolio Details form</h1>
 		<div class="blogq 1q">
-			<h2 class="q">Personal Infromation <i class="fas fa-chevron-down down"></i></h2>
-			<div class="bloga 1a">
-				
+			<h2 class="q">About me <i class="fas fa-chevron-down down"></i></h2>
+		</div>
+		<div class="bloga 1a">
+			<div class="inputwrapper">
+				<h3>First name</h3>
+				<input type="text" class="fname">
+			</div>
+			<div class="inputwrapper">
+				<h3>Last name</h3>
+				<input type="text" class="lname">
+			</div>
+			<div class="inputwrapper">
+				<h3>Job Title</h3>
+				<input type="text" class="jobtitle">
+			</div>
+			<div class="inputwrapper">
+				<h3>About me paragraph</h3>
+				<textarea rows="3" cols="100" name="comment" class="aboutp" style="padding: 10px;"></textarea>
 			</div>
 		</div>
-		First name: <input type="text" class="fname" placeholder="First Name">
-		<br><br>
-		Last name: <input type="text" class="lname" placeholder="Last Name">
-		<br><br>
-		Job Title: <input type="text" class="jobtitle" placeholder="Job Title">
-		<br><br>
-		email: <input type="text" class="email" placeholder="Email ID">
-		<br><br>
-		Phone number: <input type="text" class="phone" placeholder ="Phone Number">
-		<br><br>
-		Address: <input type="text" class="address" placeholder="Address">
-		<br><br>
-		Number of skills: <input type="number" class="skillno"><input type="submit" value="Submit" class="submitskill">
-		<br><br>
-		<div class="skills">
+		
+		<div class="blogq 2q">
+			<h2 class="q">Contact <i class="fas fa-chevron-down down"></i></h2>
 		</div>
-		<input type="submit" value="Done" class="submitdoneskill" style="display: none">
-		<br><br>
-
-		About me paragraph:<br> <textarea rows="3" cols="40" name="comment" class="aboutp"></textarea>
-		<br><br>
-
-		About me image/Profile pic: <input type="file"  accept="image/*" class="profilepic"  onchange="loadFile(event)">
+		<div class="bloga 2a">
+			<div class="inputwrapper">
+				<h3>Email ID</h3>
+				<input type="text" class="email">
+			</div>
+			<div class="inputwrapper">
+				<h3>Phone number</h3>
+				<input type="text" class="phone">
+			</div>
+			<div class="inputwrapper">
+				<h3>Address</h3>
+				<input type="text" class="address">
+			</div>
+			<br><br>
+		</div>
+		
+		<div class="blogq 3q">
+			<h2 class="q">Skills <i class="fas fa-chevron-down down"></i></h2>
+		</div>
+		<div class="bloga 3a">
+			<div class="inputwrapper">
+				<h3 style="display: inline-block; margin-right: 30px;">Number of Skills</h3>
+				<input type="number" class="skillno">
+			</div>
+			<div type="submit" value="Submit" class="submitskill">Submit</div>
+			
+			<div class="skills">
+			</div>
+		</div>
+		
+		<div class="blogq 4q">
+			<h2 class="q">Projects <i class="fas fa-chevron-down down"></i></h2>
+		</div>
+		<div class="bloga 4a">
+			About me image/Profile pic: <input type="file"  accept="image/*" class="profilepic"  onchange="loadFile(event)">
 		<p><img id="output" width="200" style="display: none;" /></p>
+		</div>
 
-		<input type="submit" value="Submit" class="submit">
+		<div class="submit">Submit</div>
 
 	</div>
 
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script>
+		var prev=0;
 		$(".blogq").click(function(){
 			$(".bloga").slideUp();
 			var a= $(this).attr("class").split(" ")[1][0];
-			$("."+a+"a").slideDown();
+			if(a!=prev)
+			{
+				$("."+a+"a").slideDown();
+				prev=a;
+			}
+			else
+				prev=0;
 		})
-		$(".3a").slideDown();
 
 		var loadFile = function(event) {
 			var image = document.getElementById('output');
@@ -99,25 +180,21 @@
 		$(".submitskill").on("click",function(){
 			var x=1;
 			for(i=0;i<$(".skillno").val();i++,x++)
-				$(".skills").append("Skill "+x+": <br> Name: <input type='text' class='skillname"+i+"'> level (out of 100)<input type='number' class='skilllevel"+i+"'><br><br>");
+				$(".skills").append('<div class="inputwrapper"><h3>Skill '+x+'</h3><input type="text" class="skillname'+i+'"></div><div class="inputwrapper"><h3>level (out of 100)</h3><input type="number" class="skilllevel'+i+'"></div><br>');
 
-			var image = document.querySelector('.submitdoneskill');
-			image.style.display = "block";
 		})
 
 		var skill= {
 		};
 
 
-		$(".submitdoneskill").on("click",function(){
+		$(".submit").on("click",function(){
 			for(i=0;i<$(".skillno").val();i++,x++)
 			{
 				var x = $(".skillname"+i).val();
 				var level = $(".skilllevel"+i).val();
 				skill[x]=level;
-			}})
-
-		$(".submit").on("click",function(){
+			}
 			det[0]=$(".fname").val();
 			det[1]=$(".lname").val();
 			det[2]=$(".email").val();
