@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>Design 5</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -51,9 +51,6 @@ body, html {
     <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
     <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
-      <i class="fa fa-search"></i>
-    </a>
   </div>
 
   <!-- Navbar on small screens -->
@@ -61,7 +58,6 @@ body, html {
     <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
     <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
     <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
   </div>
 </div>
 
@@ -176,18 +172,17 @@ body, html {
  
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script>
-  var z=localStorage.getItem("myJson"); 
-    var data=JSON.parse(z);
-    var skillname =Object.keys(data[5]);
-    var skilllevel= Object.values(data[5]);
+data = ["John","Doe","abcxyz@gmail.com","553649034","123 xyz, abc","Some text about me. I love taking photos of PEOPLE. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.","Photographer and Web Designer"];
+skillname = ["Photography","Web Design","Photoshop"];
+skilllevel = ["78","56","94"];
 
 $(".fname").html(data[0]);
 $(".lname").html(data[1]);
-$(".aboutmep").html(data[6]);
+$(".aboutmep").html(data[5]);
 $(".email").html(data[2]);
 $(".phone").html(data[3]);
 $(".address").html(data[4]);
-$(".jobtitle").html(data[7]);
+$(".jobtitle").html(data[6]);
 
 for(i=0;i<skillname.length;i++)
  {
