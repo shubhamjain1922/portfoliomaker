@@ -1,38 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Choose Design</title>
-  <style>
-  	body {
-  		background: #eee;
-  	}
+	<title>Choose Design</title>
+	<style>
+		body {
+			background: #eee;
+		}
 
-  	.heading {
+		.heading {
 			color: #0ea277;
 			font-weight: 700;
 			text-align: center;
-			margin-bottom: 40px;
+			margin-bottom: 70px;
+			font-size: 3em;
+		}
+
+		.designbox {
+			display: inline-block;
+			width: 40%;
+			margin: 4%;
+			text-align: center;
 		}
 
 		.designimg {
 			height: 300px;
-			width: 550px;
+			width: 100%;
 		}
 
 		.submit ,.submitf{
 			padding: 10px 50px;
-    border-radius: 50px;
-    background: #0ca27d;
-    color: white;
-    font-size: 1.5em;
-    display: inline-block;
-    cursor: pointer;
-    margin: 20px;
-    outline: none;
-    text-decoration: none;
+			border-radius: 50px;
+			background: #0ca27d;
+			color: white;
+			font-size: 1.5em;
+			display: inline-block;
+			cursor: pointer;
+			margin: 20px;
+			outline: none;
+			text-decoration: none;
 		}
 
-  </style>
+		@media (max-width: 1050px) {
+			.designbox {
+				width: 70%;
+				margin-left: 15%;
+				margin-right: 15%;
+			}
+		}
+
+		@media (max-width: 800px) {
+			.designbox {
+				width: 90%;
+				margin: 4%;
+			}
+		}
+
+	</style>
 </head>
 <body>
 
@@ -73,14 +96,14 @@
 		<a class="submitf 5">Select</a>
 	</div>
 
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script>
-   
-    $(".submitf").on("click",function(){
-    	var design_no = $(this).attr("class").split(" ")[1];
-    	localStorage.setItem("designno", JSON.stringify(design_no));
-      window.location.href = "form.html";
-    })
-  </script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script>
+		
+		$(".submitf").on("click",function(){
+			var design_no = $(this).attr("class").split(" ")[1];
+			localStorage.setItem("designno", JSON.stringify(design_no));
+			window.location.href = "form.html";
+		})
+	</script>
 </body>
 </html>
