@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<title>Design 3</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+  .skillbox {padding-top: 80px;
+  }
+</style>
+<body class="w3-content" style="max-width:1300px">
+
+<!-- First Grid: Logo & About -->
+<div class="w3-row">
+  <div class="w3-half w3-black w3-container w3-center" style="height:700px">
+    <div class="w3-padding-64">
+      <h1 style="text-transform: uppercase;"><span class="fname"></span> <span class="lname"></span></h1>
+      <h4 class="jobtitle"></h4>
+    </div>
+    <div class="w3-padding-64">
+      <a href="#" class="w3-button w3-black w3-block w3-hover-blue-grey w3-padding-16">Home</a>
+      <a href="#work" class="w3-button w3-black w3-block w3-hover-teal w3-padding-16">My Work</a>
+      <a href="#work" class="w3-button w3-black w3-block w3-hover-dark-grey w3-padding-16">Resume</a>
+      <a href="#contact" class="w3-button w3-black w3-block w3-hover-brown w3-padding-16">Contact</a>
+    </div>
+  </div>
+  <div class="w3-half w3-blue-grey w3-container" style="height:700px">
+    <div class="w3-padding-64 w3-center">
+      <h1>About Me</h1>
+      <img src="test2.jpg" class="w3-margin w3-circle" alt="Person" style="width:60%;height: 300px;">
+      <div class="w3-left-align w3-padding-large">
+        <p class="aboutmep">Lorem ipusm sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid: Work & Resume -->
+<div class="w3-row">
+  <div class="w3-half w3-light-grey w3-center" style="min-height:800px" id="work">
+    <div class="w3-padding-64">
+      <h2>Portfolio</h2>
+      <p>Some of my latest projects.</p>
+    </div>
+    <div class="w3-row">
+      <div class="w3-half">
+        <img src="img2.jpg" style="width:100%;max-height: 150px;">
+      </div>
+      <div class="w3-half">
+        <img src="img3.jpg" style="width:100%;max-height: 150px;">
+      </div>
+    </div>
+    <div class="w3-row w3-hide-small">
+      <div class="w3-half">
+        <img src="img4.jpg" style="width:100%;max-height: 150px;">
+      </div>
+      <div class="w3-half">
+        <img src="img2.jpg" style="width:100%;max-height: 150px;">
+      </div>
+    </div>
+
+    <div class="w3-row w3-hide-small">
+      <div class="w3-half">
+        <img src="img2.jpg" style="width:100%;max-height: 150px;">
+      </div>
+      <div class="w3-half">
+        <img src="img3.jpg" style="width:100%;max-height: 150px;">
+      </div>
+    </div><br>
+    <p>Just call me awesome.</p>
+  </div>
+  <div class="w3-half w3-indigo w3-container" style="min-height:800px">
+    <div class="w3-padding-64 w3-center">
+      <h2>Skills</h2>
+      <div class="skillbox"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Third Grid: Swing By & Contact -->
+<div class="w3-row" id="contact">
+  <div class="w3-half w3-dark-grey w3-container w3-center" style="height:700px">
+    <div class="w3-padding-64">
+      <h1>Swing By</h1>
+    </div>
+    <div class="w3-padding-64">
+      <p>..for a cup of coffee, or whatever.</p>
+      <p class="address">Chicago, US</p>
+      <p class="phone">+00 1515151515</p>
+      <p class="email">test@test.com</p>
+    </div>
+  </div>
+  <div class="w3-half w3-teal w3-container" style="height:700px">
+    <div class="w3-padding-64 w3-padding-large">
+      <h1>Contact</h1>
+      <p class="w3-opacity">GET IN TOUCH</p>
+      <form class="w3-container w3-card w3-padding-32 w3-white" action="/action_page.php" target="_blank">
+        <div class="w3-section">
+          <label>Name</label>
+          <input class="w3-input" style="width:100%;" type="text" required name="Name">
+        </div>
+        <div class="w3-section">
+          <label>Email</label>
+          <input class="w3-input" style="width:100%;" type="text" required name="Email">
+        </div>
+        <div class="w3-section">
+          <label>Message</label>
+          <input class="w3-input" style="width:100%;" type="text" required name="Message">
+        </div>
+        <button type="submit" class="w3-button w3-teal w3-right">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-black w3-padding-16">
+  <span class="fname"></span> <span class="lname"></span>
+</footer>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script>
+data = ["John","Doe","abcxyz@gmail.com","553649034","123 xyz, abc","Some text about me. I love taking photos of PEOPLE. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.","Photographer and Web Designer."];
+skillname = ["Photography","Web Design","Photoshop"];
+skilllevel = ["78","56","94"];
+
+$(".fname").html(data[0]);
+$(".lname").html(data[1]);
+$(".aboutmep").html(data[5]);
+$(".email").html(data[2]);
+$(".phone").html(data[3]);
+$(".address").html(data[4]);
+$(".jobtitle").html(data[6]);
+
+for(i=0;i<skillname.length;i++)
+ {
+  $(".skillbox").append('<p class="w3-wide">'+skillname[i]+'</p><div class="w3-white"><div class="w3-dark-grey" style="height:28px;width:'+skilllevel[i]+'%"></div></div>');
+ }
+</script>
+
+</body>
+</html>
