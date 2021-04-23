@@ -1,25 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Home</title>
+  <title>Choose Design</title>
+  <style>
+  	body {
+  		background: #eee;
+  	}
+
+  	.heading {
+			color: #0ea277;
+			font-weight: 700;
+			text-align: center;
+			margin-bottom: 40px;
+		}
+
+		.designimg {
+			height: 300px;
+			width: 550px;
+		}
+
+		.submit ,.submitf{
+			padding: 10px 50px;
+    border-radius: 50px;
+    background: #0ca27d;
+    color: white;
+    font-size: 1.5em;
+    display: inline-block;
+    cursor: pointer;
+    margin: 20px;
+    outline: none;
+    text-decoration: none;
+		}
+
+  </style>
 </head>
 <body>
 
-	<label for="design">Choose design:</label>
-              <select id="design" name="design">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+	<h1 class="heading">Choose a Design</h1>
 
-  <input type="submit" name="submit" class="submit">
+	<div class="designbox">
+		<img src="cover/1.jpg" class="designimg">
+		<br>
+		<a class="submit" href="designs/1/demo/index.html">Demo</a>
+		<a class="submitf 1">Select</a>
+	</div>
+
+	<div class="designbox">
+		<img src="cover/2.jpg" class="designimg">
+		<br>
+		<a class="submit" href="designs/2/demo/index.html">Demo</a>
+		<a class="submitf 2">Select</a>
+	</div>
+
+	<div class="designbox">
+		<img src="cover/3.jpg" class="designimg">
+		<br>
+		<a class="submit" href="designs/3/demo/index.html">Demo</a>
+		<a class="submitf 3">Select</a>
+	</div>
+
+	<div class="designbox">
+		<img src="cover/4.jpg" class="designimg">
+		<br>
+		<a class="submit" href="designs/4/demo/index.html">Demo</a>
+		<a class="submitf 4">Select</a>
+	</div>
+
+	<div class="designbox">
+		<img src="cover/5.jpg" class="designimg">
+		<br>
+		<a class="submit" href="designs/5/demo/index.html">Demo</a>
+		<a class="submitf 5">Select</a>
+	</div>
+
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script>
    
-    $(".submit").on("click",function(){
-    	var design_no = $("#design").val();
+    $(".submitf").on("click",function(){
+    	var design_no = $(this).attr("class").split(" ")[1];
     	localStorage.setItem("designno", JSON.stringify(design_no));
       window.location.href = "form.html";
     })
