@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Choose Design</title>
+	<style>
+		body {
+			background: #eee;
+		}
+
+		.heading {
+			color: #0ea277;
+			font-weight: 700;
+			text-align: center;
+			margin-bottom: 70px;
+			font-size: 3em;
+		}
+
+		.designbox {
+			display: inline-block;
+			width: 40%;
+			margin: 4%;
+			text-align: center;
+		}
+
+		.designimg {
+			height: 300px;
+			width: 100%;
+		}
+
+		.submit ,.submitf{
+			padding: 10px 50px;
+			border-radius: 50px;
+			background: #0ca27d;
+			color: white;
+			font-size: 1.5em;
+			display: inline-block;
+			cursor: pointer;
+			margin: 20px;
+			outline: none;
+			text-decoration: none;
+		}
+
+		@media (max-width: 1050px) {
+			.designbox {
+				width: 70%;
+				margin-left: 15%;
+				margin-right: 15%;
+			}
+		}
+
+		@media (max-width: 800px) {
+			.designbox {
+				width: 90%;
+				margin: 4%;
+			}
+		}
+
+	</style>
+</head>
+<body>
+
+	<h1 class="heading">Choose a Design</h1>
+
+	<div class="designbox">
+		<img src="cover/1.jpg" class="designimg">
+		<br>
+		<a class="submit" href="designs/1/demo/index.html">Demo</a>
+		<a class="submitf 1">Select</a>
+	</div>
+
+	<div class="designbox">
+		<img src="cover/2.jpg" class="designimg">
+		<br>
+		<a class="submit" href="designs/2/demo/index.html">Demo</a>
+		<a class="submitf 2">Select</a>
+	</div>
+
+	<div class="designbox">
+		<img src="cover/3.jpg" class="designimg">
+		<br>
+		<a class="submit" href="designs/3/demo/index.html">Demo</a>
+		<a class="submitf 3">Select</a>
+	</div>
+
+	<div class="designbox">
+		<img src="cover/4.jpg" class="designimg">
+		<br>
+		<a class="submit" href="designs/4/demo/index.html">Demo</a>
+		<a class="submitf 4">Select</a>
+	</div>
+
+	<div class="designbox">
+		<img src="cover/5.jpg" class="designimg">
+		<br>
+		<a class="submit" href="designs/5/demo/index.html">Demo</a>
+		<a class="submitf 5">Select</a>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script>
+		
+		$(".submitf").on("click",function(){
+			var design_no = $(this).attr("class").split(" ")[1];
+			localStorage.setItem("designno", JSON.stringify(design_no));
+			window.location.href = "form.html";
+		})
+	</script>
+</body>
+</html>
